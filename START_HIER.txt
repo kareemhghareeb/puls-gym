@@ -1,0 +1,25 @@
+START HIER
+==========
+
+1. Installiere VS Code, Node.js 24 LTS und Git.
+
+2. Entpacke die ZIP-Datei vollständig.
+
+3. Öffne in VS Code über „Datei > Ordner öffnen“ den gesamten Ordner
+   „astro-website-starter“.
+
+4. Installiere die offizielle Codex-Erweiterung und melde dich mit deinem
+   ChatGPT-Konto an.
+
+5. Starte eine neue Codex-Unterhaltung.
+
+6. Sende Codex diesen ersten Auftrag:
+
+Prüfe dieses vorbereitete Astro-Projekt. Lies zuerst AGENTS.md und KONZEPT.md. Prüfe meine Node- und npm-Version. Richte danach die Abhängigkeiten ein und starte die vorhandene Website lokal. Erkläre mir nur wichtige Probleme in einfachem Deutsch.
+
+7. Recherchiere bei Problemen zuerst selbst mit Codex, Suchmaschinen, Videos
+   oder Dokumentationen. Wenn du danach weiterhin festhängst, frage den
+   Kursleiter oder einen anderen Teilnehmer.
+
+8. Verwende GitHub Copilot Free nur als Ersatz, wenn das Codex-Kontingent nicht
+   mehr reicht. Lass niemals zwei Agenten gleichzeitig am selben Auftrag arbeiten.

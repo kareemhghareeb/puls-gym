@@ -1,0 +1,410 @@
+---
+import '../styles/global.css';
+import { siteContent } from '../data/siteContent';
+
+const studio = {
+  name: siteContent.name,
+  city: siteContent.city,
+  title: `${siteContent.title} | Dein Fitnessstudio`,
+  description: siteContent.description,
+};
+---
+
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={studio.description} />
+    <title>{studio.title}</title>
+  </head>
+  <body data-theme="dark">
+    <header class="topbar" data-reveal>
+      <a class="brand-mark" href="#top">{studio.name}</a>
+      <nav class="topnav" aria-label="Sekundäre Navigation">
+        <a href="#angebot">Angebot</a>
+        <a href="#erfolge">Erfolge</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <div class="toolbar-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Design wechseln">🌙</button>
+        <button class="icon-btn" id="lang-toggle" type="button" aria-label="Sprache wechseln">EN</button>
+      </div>
+    </header>
+
+    <main class="page-shell" id="top">
+      <section class="hero-card" data-reveal>
+        <div class="hero-copy">
+          <p class="eyebrow">{studio.name}</p>
+          <div class="badge-row" aria-label="Vorteile">
+            <span data-i18n="badgeOne">SMART Coaching</span>
+            <span data-i18n="badgeTwo">Flexible Kurse</span>
+            <span data-i18n="badgeThree">Persönliche Betreuung</span>
+          </div>
+          <h1 data-i18n="heroTitle">Trainiere smarter – mit Fokus, Energie und Struktur.</h1>
+          <p class="lead" data-i18n="heroLead">
+            In {studio.city} bekommst du moderne Trainingskonzepte, persönliche Unterstützung
+            und einen Motivationsschub, der wirklich hält.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#angebot" data-i18n="ctaPrimary">Probetraining sichern</a>
+            <a class="btn btn-secondary" href="#erfolge" data-i18n="ctaSecondary">Mehr erfahren</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Studio-Highlights">
+          <div class="metric">
+            <strong>4.9/5</strong>
+            <span>Bewertung aus Mitgliedern</span>
+          </div>
+          <div class="metric">
+            <strong>35+</strong>
+            <span>Trainings- und Kursangebote</span>
+          </div>
+          <div class="metric">
+            <strong>1:1</strong>
+            <span>Persönliche Betreuung</span>
+          </div>
+        </aside>
+      </section>
+
+      <section id="angebot" class="content-grid" data-reveal>
+        <article class="info-card">
+          <p class="eyebrow eyebrow-small" data-i18n="offeringEyebrow">Warum Pulse Gym?</p>
+          <h2 data-i18n="offeringTitle">Dein Training, dein Momentum</h2>
+          <p data-i18n="offeringLead">
+            Du willst nicht nur trainieren – du willst spüren, dass du vorankommst. Mit
+            klarer Struktur, starken Impulsen und einer Umgebung, die dich motiviert, entsteht
+            ein Training, das wirklich in deinen Alltag passt.
+          </p>
+
+          <div class="mini-highlight-grid">
+            <div class="mini-highlight">
+              <span class="mini-icon">⚡</span>
+              <div>
+                <strong data-i18n="routineTitle">Routine</strong>
+                <small data-i18n="routineText">klare Schritte, kein Chaos</small>
+              </div>
+            </div>
+            <div class="mini-highlight">
+              <span class="mini-icon">💪</span>
+              <div>
+                <strong data-i18n="progressTitle">Fortschritt</strong>
+                <small data-i18n="progressText">du wirst sichtbar stärker</small>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="info-card accent-card">
+          <p class="eyebrow eyebrow-small" data-i18n="planEyebrow">Dein Weg, dein Plan</p>
+          <h2 data-i18n="planTitle">So wirst du stärker – ganz individuell</h2>
+
+          <div class="plan-steps">
+            <div class="plan-step">
+              <span class="plan-index">1</span>
+              <div>
+                <strong data-i18n="stepOneTitle">Persönliche Begleitung</strong>
+                <p data-i18n="stepOneText">Ein klarer Plan, der sich an deinen Alltag anpasst.</p>
+              </div>
+            </div>
+            <div class="plan-step">
+              <span class="plan-index">2</span>
+              <div>
+                <strong data-i18n="stepTwoTitle">Flexible Zeiten</strong>
+                <p data-i18n="stepTwoText">Trainieren, wenn es für dich wirklich passt.</p>
+              </div>
+            </div>
+            <div class="plan-step">
+              <span class="plan-index">3</span>
+              <div>
+                <strong data-i18n="stepThreeTitle">Motivation, die hält</strong>
+                <p data-i18n="stepThreeText">Eine Atmosphäre, die dich immer wieder zurückbringt.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="erfolge" class="stats-bar" data-reveal>
+        <div class="stat-tile">
+          <span class="stat-label" data-i18n="statsMembersLabel">Mitglieder</span>
+          <strong>2.000+</strong>
+          <span data-i18n="statsMembersText">Mitglieder im Studio</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-label" data-i18n="statsRetentionLabel">Aktiv bleiben</span>
+          <strong>92%</strong>
+          <span data-i18n="statsRetentionText">bleiben nach 6 Monaten aktiv</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-label" data-i18n="statsTrainerLabel">Trainer</span>
+          <strong>12</strong>
+          <span data-i18n="statsTrainerText">Trainer mit Fokus auf Ergebnisse</span>
+        </div>
+      </section>
+
+      <section id="kontakt" class="contact-section" data-reveal>
+        <article class="info-card contact-card">
+          <p class="eyebrow eyebrow-small" data-i18n="contactEyebrow">Kontakt</p>
+          <h2 data-i18n="contactTitle">Kontaktiere uns direkt</h2>
+          <p data-i18n="contactLead">
+            Für Fragen zu Mitgliedschaften, Kursen und deinem Probetraining erreichst du uns
+            schnell und unkompliziert.
+          </p>
+
+          <div class="contact-list">
+            <a class="contact-pill" href={`tel:${siteContent.phone}`}>📞 {siteContent.phone}</a>
+            <a class="contact-pill" href={`mailto:${siteContent.email}`}>✉️ {siteContent.email}</a>
+            <span class="contact-pill muted-pill">📍 {siteContent.street}, {siteContent.postalCode} {siteContent.city}</span>
+          </div>
+
+          <a class="btn btn-primary contact-btn" href={`mailto:${siteContent.email}`} data-i18n="contactButton">E-Mail senden</a>
+        </article>
+
+        <article class="info-card accent-card hours-card">
+          <p class="eyebrow eyebrow-small" data-i18n="hoursEyebrow">Öffnungszeiten</p>
+          <h2 data-i18n="hoursTitle">So bist du bei uns willkommen</h2>
+
+          <div class="hours-grid">
+            <div class="hour-row">
+              <span class="day-tag">Mo–Fr</span>
+              <strong data-i18n="hoursWeekday">06:30–22:00 Uhr</strong>
+            </div>
+            <div class="hour-row">
+              <span class="day-tag">Samstag</span>
+              <strong data-i18n="hoursSaturday">09:00–18:00 Uhr</strong>
+            </div>
+            <div class="hour-row">
+              <span class="day-tag">Sonntag</span>
+              <strong data-i18n="hoursSunday">10:00–16:00 Uhr</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="feature-strip" data-reveal>
+        <article class="feature-card">
+          <span class="feature-pill" data-i18n="featurePlanTag">Plan</span>
+          <h2 data-i18n="featurePlanTitle">Mehr Erfolg durch klare Struktur</h2>
+          <p data-i18n="featurePlanText">Ein Trainingsplan, der dich jeden Tag weiterbringt.</p>
+          <a class="feature-action" href="#kontakt" data-i18n="featurePlanAction">Jetzt starten</a>
+        </article>
+        <article class="feature-card">
+          <span class="feature-pill" data-i18n="featureMotivationTag">Motivation</span>
+          <h2 data-i18n="featureMotivationTitle">Motivation, die bleibt</h2>
+          <p data-i18n="featureMotivationText">Persönliche Begleitung hält deinen Fokus auch im Alltag stark.</p>
+          <a class="feature-action" href="#kontakt" data-i18n="featureMotivationAction">Mehr erfahren</a>
+        </article>
+        <article class="feature-card">
+          <span class="feature-pill" data-i18n="featureFlexibleTag">Flexibel</span>
+          <h2 data-i18n="featureFlexibleTitle">Flexibel & modern</h2>
+          <p data-i18n="featureFlexibleText">Trainingszeiten und Betreuung passen sich deinem Alltag an.</p>
+          <a class="feature-action" href="#kontakt" data-i18n="featureFlexibleAction">Anfragen</a>
+        </article>
+      </section>
+
+      <footer class="footer-links">
+        <div class="footer-brand">{studio.name}</div>
+        <div class="footer-links-inner">
+          <a href="/impressum">Impressum</a>
+          <a href="/datenschutz">Datenschutz</a>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      const ThemeState = {
+        dark: {
+          button: '☀️',
+          bodyTheme: 'dark'
+        },
+        light: {
+          button: '🌙',
+          bodyTheme: 'light'
+        }
+      };
+
+      const translations = {
+        de: {
+          heroTitle: 'Trainiere smarter – mit Fokus, Energie und Struktur.',
+          heroLead: 'In Göttingen bekommst du moderne Trainingskonzepte, persönliche Unterstützung und einen Motivationsschub, der wirklich hält.',
+          ctaPrimary: 'Probetraining sichern',
+          ctaSecondary: 'Mehr erfahren',
+          navOffer: 'Angebot',
+          navResults: 'Erfolge',
+          navContact: 'Kontakt',
+          badgeOne: 'SMART Coaching',
+          badgeTwo: 'Flexible Kurse',
+          badgeThree: 'Persönliche Betreuung',
+          offeringEyebrow: 'Warum Pulse Gym?',
+          offeringTitle: 'Dein Training, dein Momentum',
+          offeringLead: 'Du willst nicht nur trainieren – du willst spüren, dass du vorankommst. Mit klarer Struktur, starken Impulsen und einer Umgebung, die dich motiviert, entsteht ein Training, das wirklich in deinen Alltag passt.',
+          routineTitle: 'Routine',
+          routineText: 'klare Schritte, kein Chaos',
+          progressTitle: 'Fortschritt',
+          progressText: 'du wirst sichtbar stärker',
+          planEyebrow: 'Dein Weg, dein Plan',
+          planTitle: 'So wirst du stärker – ganz individuell',
+          stepOneTitle: 'Persönliche Begleitung',
+          stepOneText: 'Ein klarer Plan, der sich an deinen Alltag anpasst.',
+          stepTwoTitle: 'Flexible Zeiten',
+          stepTwoText: 'Trainieren, wenn es für dich wirklich passt.',
+          stepThreeTitle: 'Motivation, die hält',
+          stepThreeText: 'Eine Atmosphäre, die dich immer wieder zurückbringt.',
+          statsMembersLabel: 'Mitglieder',
+          statsMembersText: 'Mitglieder im Studio',
+          statsRetentionLabel: 'Aktiv bleiben',
+          statsRetentionText: 'bleiben nach 6 Monaten aktiv',
+          statsTrainerLabel: 'Trainer',
+          statsTrainerText: 'Trainer mit Fokus auf Ergebnisse',
+          contactEyebrow: 'Kontakt',
+          contactTitle: 'Kontaktiere uns direkt',
+          contactLead: 'Für Fragen zu Mitgliedschaften, Kursen und deinem Probetraining erreichst du uns schnell und unkompliziert.',
+          contactButton: 'E-Mail senden',
+          hoursEyebrow: 'Öffnungszeiten',
+          hoursTitle: 'So bist du bei uns willkommen',
+          hoursWeekday: '06:30–22:00 Uhr',
+          hoursSaturday: '09:00–18:00 Uhr',
+          hoursSunday: '10:00–16:00 Uhr',
+          featurePlanTag: 'Plan',
+          featurePlanTitle: 'Mehr Erfolg durch klare Struktur',
+          featurePlanText: 'Ein Trainingsplan, der dich jeden Tag weiterbringt.',
+          featurePlanAction: 'Jetzt starten',
+          featureMotivationTag: 'Motivation',
+          featureMotivationTitle: 'Motivation, die bleibt',
+          featureMotivationText: 'Persönliche Begleitung hält deinen Fokus auch im Alltag stark.',
+          featureMotivationAction: 'Mehr erfahren',
+          featureFlexibleTag: 'Flexibel',
+          featureFlexibleTitle: 'Flexibel & modern',
+          featureFlexibleText: 'Trainingszeiten und Betreuung passen sich deinem Alltag an.',
+          featureFlexibleAction: 'Anfragen'
+        },
+        en: {
+          heroTitle: 'Train smarter – with focus, energy and structure.',
+          heroLead: 'In Göttingen you get modern training concepts, personal support and motivation that actually lasts.',
+          ctaPrimary: 'Book a free trial',
+          ctaSecondary: 'Learn more',
+          navOffer: 'Offer',
+          navResults: 'Results',
+          navContact: 'Contact',
+          badgeOne: 'SMART Coaching',
+          badgeTwo: 'Flexible classes',
+          badgeThree: 'Personal support',
+          offeringEyebrow: 'Why Pulse Gym?',
+          offeringTitle: 'Your training, your momentum',
+          offeringLead: 'You do not just want to train – you want to feel progress. With clear structure, strong momentum and an environment that keeps you motivated, your training fits naturally into your everyday life.',
+          routineTitle: 'Routine',
+          routineText: 'clear steps, no chaos',
+          progressTitle: 'Progress',
+          progressText: 'you will feel noticeably stronger',
+          planEyebrow: 'Your path, your plan',
+          planTitle: 'So you become stronger – completely individual',
+          stepOneTitle: 'Personal guidance',
+          stepOneText: 'A clear plan that fits your day-to-day life.',
+          stepTwoTitle: 'Flexible times',
+          stepTwoText: 'Train whenever it genuinely works for you.',
+          stepThreeTitle: 'Motivation that lasts',
+          stepThreeText: 'An atmosphere that brings you back again and again.',
+          statsMembersLabel: 'Members',
+          statsMembersText: 'Members in the studio',
+          statsRetentionLabel: 'Stay active',
+          statsRetentionText: 'stay active after 6 months',
+          statsTrainerLabel: 'Trainers',
+          statsTrainerText: 'Coaches focused on results',
+          contactEyebrow: 'Contact',
+          contactTitle: 'Get in touch directly',
+          contactLead: 'For questions about memberships, classes and your trial session, we are here to help quickly and simply.',
+          contactButton: 'Send an email',
+          hoursEyebrow: 'Opening hours',
+          hoursTitle: 'This is how we welcome you',
+          hoursWeekday: '06:30–22:00',
+          hoursSaturday: '09:00–18:00',
+          hoursSunday: '10:00–16:00',
+          featurePlanTag: 'Plan',
+          featurePlanTitle: 'More results through clear structure',
+          featurePlanText: 'A training plan that moves you forward every day.',
+          featurePlanAction: 'Start now',
+          featureMotivationTag: 'Motivation',
+          featureMotivationTitle: 'Motivation that stays',
+          featureMotivationText: 'Personal support keeps your focus strong even in everyday life.',
+          featureMotivationAction: 'Learn more',
+          featureFlexibleTag: 'Flexible',
+          featureFlexibleTitle: 'Flexible & modern',
+          featureFlexibleText: 'Training times and support adapt to your day-to-day routine.',
+          featureFlexibleAction: 'Inquire'
+        }
+      };
+
+      const revealItems = document.querySelectorAll('[data-reveal]');
+      const themeToggle = document.querySelector('#theme-toggle');
+      const langToggle = document.querySelector('#lang-toggle');
+      const body = document.body;
+      const navLinks = document.querySelectorAll('.topnav a');
+      const localizedNodes = document.querySelectorAll('[data-i18n]');
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      revealItems.forEach((item) => revealObserver.observe(item));
+
+      const savedTheme = localStorage.getItem('theme-mode') || 'dark';
+      const savedLanguage = localStorage.getItem('site-language') || 'de';
+
+      function applyTheme(nextTheme) {
+        body.setAttribute('data-theme', nextTheme);
+        themeToggle.textContent = ThemeState[nextTheme].button;
+        localStorage.setItem('theme-mode', nextTheme);
+      }
+
+      function applyLanguage(nextLanguage) {
+        const dictionary = translations[nextLanguage];
+        localizedNodes.forEach((node) => {
+          const key = node.dataset.i18n;
+          if (dictionary[key]) {
+            node.textContent = dictionary[key];
+          }
+        });
+
+        navLinks[0].textContent = dictionary.navOffer;
+        navLinks[1].textContent = dictionary.navResults;
+        navLinks[2].textContent = dictionary.navContact;
+        document.documentElement.lang = nextLanguage;
+        document.title = nextLanguage === 'en'
+          ? 'Pulse Gym Göttingen | Your fitness studio'
+          : 'Pulse Gym Göttingen | Dein Fitnessstudio';
+        document.querySelector('meta[name="description"]').setAttribute(
+          'content',
+          nextLanguage === 'en'
+            ? 'Pulse Gym in Göttingen: modern training, classes and personal support.'
+            : 'Pulse Gym in Göttingen: modernes Training, Kurse und persönliche Betreuung.'
+        );
+        langToggle.textContent = nextLanguage === 'de' ? 'EN' : 'DE';
+        localStorage.setItem('site-language', nextLanguage);
+      }
+
+      applyTheme(savedTheme);
+      applyLanguage(savedLanguage);
+
+      themeToggle.addEventListener('click', () => {
+        const nextTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(nextTheme);
+      });
+
+      langToggle.addEventListener('click', () => {
+        const nextLanguage = document.documentElement.lang === 'de' ? 'en' : 'de';
+        applyLanguage(nextLanguage);
+      });
+    </script>
+  </body>
+</html>
+

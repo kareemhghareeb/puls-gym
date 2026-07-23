@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+import { siteContent } from '../data/siteContent';
+
+const pageTitle = `Impressum | ${siteContent.title}`;
+const pageDescription = `Impressum von ${siteContent.title} in ${siteContent.city}.`;
+---
+
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={pageDescription} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <main class="page-shell legal-shell">
+      <a class="back-link" href="/">← Zur Startseite</a>
+      <section class="legal-card">
+        <p class="eyebrow">Rechtliches</p>
+        <h1>Impressum</h1>
+        <p class="lead">
+          Die folgenden Angaben dienen als einfacher Impressumstext für die Website von {siteContent.name} in {siteContent.city}.
+        </p>
+
+        <div class="legal-grid">
+          <article>
+            <h2>Verantwortlich</h2>
+            <p>{siteContent.owner}<br />{siteContent.businessForm}<br />{siteContent.street}<br />{siteContent.postalCode} {siteContent.city}</p>
+          </article>
+
+          <article>
+            <h2>Kontakt</h2>
+            <p>
+              E-Mail: <a href={`mailto:${siteContent.email}`}>{siteContent.email}</a><br />
+              Telefon: <a href={`tel:${siteContent.phone}`}>{siteContent.phone}</a>
+            </p>
+          </article>
+        </div>
+
+        <article>
+          <h2>Hinweis</h2>
+          <p>
+            {siteContent.contactNote} Für eine vollständige, rechtssichere Version solltest du die Angaben mit der tatsächlich gültigen Firmen- und Kontaktdatenlage abgleichen.
+          </p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

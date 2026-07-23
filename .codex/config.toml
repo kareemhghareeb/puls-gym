@@ -1,0 +1,13 @@
+approval_policy = "on-request"
+approvals_reviewer = "user"
+sandbox_mode = "workspace-write"
+allow_login_shell = false
+
+[sandbox_workspace_write]
+network_access = true
+exclude_slash_tmp = true
+exclude_tmpdir_env_var = true
+
+[shell_environment_policy]
+inherit = "core"
+ignore_default_excludes = false

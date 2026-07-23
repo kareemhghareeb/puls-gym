@@ -1,0 +1,18 @@
+# Git-Befehle, die den Projektstand verändern oder veröffentlichen, brauchen Zustimmung.
+prefix_rule(pattern = ["git", "add"], decision = "prompt", justification = "Dateien nur nach ausdrücklicher Bestätigung zum Commit vormerken.")
+prefix_rule(pattern = ["git", "commit"], decision = "prompt", justification = "Commits nur nach ausdrücklicher Bestätigung erstellen.")
+prefix_rule(pattern = ["git", "push"], decision = "prompt", justification = "Änderungen nur nach ausdrücklicher Bestätigung veröffentlichen.")
+prefix_rule(pattern = ["git", "checkout"], decision = "prompt", justification = "Branch- oder Dateiwechsel nur nach ausdrücklicher Bestätigung ausführen.")
+prefix_rule(pattern = ["git", "switch"], decision = "prompt", justification = "Branches nur nach ausdrücklicher Bestätigung wechseln.")
+prefix_rule(pattern = ["git", "branch"], decision = "prompt", justification = "Branches nur nach ausdrücklicher Bestätigung verändern.")
+prefix_rule(pattern = ["git", "merge"], decision = "prompt", justification = "Branches nur nach ausdrücklicher Bestätigung zusammenführen.")
+prefix_rule(pattern = ["gh", "pr", "merge"], decision = "prompt", justification = "Pull Requests nur nach ausdrücklicher Bestätigung mergen.")
+
+# Gefährliche oder ausdrücklich unerwünschte Befehle sind gesperrt.
+prefix_rule(pattern = ["git", "reset", "--hard"], decision = "forbidden", justification = "Dieser Befehl kann lokale Arbeit unwiderruflich löschen.")
+prefix_rule(pattern = ["git", "clean"], decision = "forbidden", justification = "Dieser Befehl kann nicht versionierte Dateien unwiderruflich löschen.")
+prefix_rule(pattern = ["git", "push", "--force"], decision = "forbidden", justification = "Force-Push ist in diesem Lernprojekt nicht erlaubt.")
+prefix_rule(pattern = ["git", "push", "-f"], decision = "forbidden", justification = "Force-Push ist in diesem Lernprojekt nicht erlaubt.")
+prefix_rule(pattern = ["sudo"], decision = "forbidden", justification = "Systemweite Administratorbefehle sind für dieses Projekt nicht nötig.")
+prefix_rule(pattern = ["rm", "-rf"], decision = "forbidden", justification = "Rekursives erzwungenes Löschen ist zu riskant; Dateien gezielt und sicher entfernen.")
+prefix_rule(pattern = ["rm", "-fr"], decision = "forbidden", justification = "Rekursives erzwungenes Löschen ist zu riskant; Dateien gezielt und sicher entfernen.")

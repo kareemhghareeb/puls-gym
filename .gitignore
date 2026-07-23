@@ -1,0 +1,5 @@
+node_modules/
+node-v24.18.0-darwin-x64/
+dist/
+.astro/
+.npm-cache/
