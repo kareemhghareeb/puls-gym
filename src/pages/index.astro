@@ -15,10 +15,15 @@ const studio = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={studio.description} />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{studio.title}</title>
   </head>
   <body data-theme="dark">
     <header class="topbar" data-reveal>
+    <button class="menu-toggle" id="menu-toggle">
+    ☰
+</button>
       <a class="brand-mark" href="#top">{studio.name}</a>
       <nav class="topnav" aria-label="Sekundäre Navigation">
         <a href="#angebot">Angebot</a>
@@ -214,6 +219,39 @@ const studio = {
     </main>
 
     <script>
+    const menuBtn=document.getElementById("menu-toggle");
+const menu=document.querySelector(".topnav");
+const actions=document.querySelector(".toolbar-actions");
+
+menuBtn.onclick=()=>{
+
+    menu.classList.toggle("active");
+    actions.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+        menuBtn.innerHTML="✕";
+        document.body.style.overflow="hidden";
+    }else{
+        menuBtn.innerHTML="☰";
+        document.body.style.overflow="";
+    }
+
+};
+
+document.querySelectorAll(".topnav a").forEach(link=>{
+
+    link.onclick=()=>{
+
+        menu.classList.remove("active");
+        actions.classList.remove("active");
+
+        menuBtn.innerHTML="☰";
+
+        document.body.style.overflow="";
+
+    }
+
+});
       const ThemeState = {
         dark: {
           button: '☀️',

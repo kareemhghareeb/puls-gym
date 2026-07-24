@@ -69,6 +69,8 @@ npm run preview
 
 Das Projekt erzeugt eine vollständig statische Website. Der Inhalt von `dist/` kann auf jede statische Hosting-Plattform hochgeladen werden, zum Beispiel Netlify, Vercel, GitHub Pages oder einen normalen Webspace.
 
+Für Cloudflare Pages wird die öffentliche URL in der Regel automatisch als `https://<projektname>.pages.dev` erzeugt. Bei diesem Repository passt der Standardname für die Public-Live-URL zu `https://pulse-gym.pages.dev`.
+
 ## Hinweis zu Inhalten
 
 Die aktuellen Kontaktdaten und Geschäftsinformationen in `src/data/siteContent.js` sind momentan Platzhalter und sollten vor dem echten Live-Start durch die endgültigen Informationen ersetzt werden.

@@ -753,3 +753,89 @@ body[data-theme='light'] .accent-card {
     gap: 10px;
   }
 }
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    color:var(--text);
+    font-size:2rem;
+    cursor:pointer;
+    z-index:1001;
+}
+
+@media(max-width:760px){
+
+    .topbar{
+        border-radius:20px;
+        justify-content:space-between;
+        align-items:center;
+        flex-wrap:nowrap;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .topnav{
+
+        position:fixed;
+
+        top:0;
+        right:-100%;
+
+        width:75%;
+        max-width:320px;
+        height:100vh;
+
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        gap:30px;
+
+        background:rgba(8,17,31,.97);
+        backdrop-filter:blur(25px);
+
+        transition:.35s ease;
+
+        z-index:999;
+    }
+
+    body[data-theme="light"] .topnav{
+        background:rgba(255,255,255,.97);
+    }
+
+    .topnav.active{
+        right:0;
+    }
+
+    .topnav a{
+        font-size:1.2rem;
+    }
+
+    .toolbar-actions{
+
+        position:fixed;
+
+        right:-100%;
+        bottom:40px;
+
+        width:75%;
+        max-width:320px;
+
+        display:flex;
+        justify-content:center;
+        gap:20px;
+
+        transition:.35s ease;
+
+        z-index:1000;
+    }
+
+    .toolbar-actions.active{
+        right:0;
+    }
+
+}
+
