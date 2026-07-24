@@ -20,6 +20,23 @@ const studio = {
     <title>{studio.title}</title>
   </head>
   <body data-theme="dark">
+  <div id="intro">
+
+    <div class="pulse-ring"></div>
+
+    <div class="pulse-ring ring2"></div>
+
+    <div class="intro-content">
+
+        <h1>Pulse Gym</h1>
+
+        <p>Herzlich Willkommen</p>
+
+        <span>Dein Erfolg beginnt heute.</span>
+
+    </div>
+
+</div>
     <header class="topbar" data-reveal>
     <button class="menu-toggle" id="menu-toggle">
     ☰
@@ -442,6 +459,23 @@ document.querySelectorAll(".topnav a").forEach(link=>{
         const nextLanguage = document.documentElement.lang === 'de' ? 'en' : 'de';
         applyLanguage(nextLanguage);
       });
+window.addEventListener("load",()=>{
+
+    const intro=document.getElementById("intro");
+
+    setTimeout(()=>{
+
+        intro.style.opacity="0";
+
+        setTimeout(()=>{
+
+            intro.remove();
+
+        },1600);
+
+    },2500);
+
+});
     </script>
   </body>
 </html>
