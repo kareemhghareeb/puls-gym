@@ -17,7 +17,10 @@ const pageDescription = `Datenschutzhinweise für ${siteContent.title} in ${site
   </head>
   <body>
     <main class="page-shell legal-shell">
-      <a class="back-link" href="/">← Zur Startseite</a>
+     <a class="back-home-btn" href="/" id="back-home">
+    <span class="arrow">←</span>
+    <span>Zur Startseite</span>
+</a>
       <section class="legal-card">
         <p class="eyebrow">Rechtliches</p>
         <h1>Datenschutz</h1>
@@ -61,5 +64,14 @@ const pageDescription = `Datenschutzhinweise für ${siteContent.title} in ${site
         </div>
       </section>
     </main>
+   <script is:inline>
+  const backHome = document.getElementById("back-home");
+
+  if (backHome) {
+    backHome.addEventListener("click", () => {
+      sessionStorage.setItem("skipIntro", "true");
+    });
+  }
+</script>
   </body>
 </html>

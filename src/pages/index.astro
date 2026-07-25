@@ -451,32 +451,46 @@ document.querySelectorAll(".topnav a").forEach(link=>{
       applyLanguage(savedLanguage);
 
       themeToggle.addEventListener('click', () => {
-        const nextTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        applyTheme(nextTheme);
-      });
+  const nextTheme =
+    body.getAttribute('data-theme') === 'dark'
+      ? 'light'
+      : 'dark';
 
-      langToggle.addEventListener('click', () => {
-        const nextLanguage = document.documentElement.lang === 'de' ? 'en' : 'de';
-        applyLanguage(nextLanguage);
-      });
-window.addEventListener("load",()=>{
-
-    const intro=document.getElementById("intro");
-
-    setTimeout(()=>{
-
-        intro.style.opacity="0";
-
-        setTimeout(()=>{
-
-            intro.remove();
-
-        },1600);
-
-    },2500);
-
+  applyTheme(nextTheme);
 });
-    </script>
+
+langToggle.addEventListener('click', () => {
+  const nextLanguage =
+    document.documentElement.lang === 'de'
+      ? 'en'
+      : 'de';
+
+  applyLanguage(nextLanguage);
+});
+
+window.addEventListener("load", () => {
+  const skipIntro = sessionStorage.getItem("skipIntro") === "true";
+
+if (skipIntro) {
+    sessionStorage.removeItem("skipIntro");
+
+    const intro = document.getElementById("intro");
+
+    if (intro) {
+        intro.style.display = "none";
+    }
+}
+
+  setTimeout(() => {
+    intro.style.opacity = "0";
+
+    setTimeout(() => {
+      intro.remove();
+    }, 1600);
+
+  }, 2500);
+});
+</script>
   </body>
 </html>
 
