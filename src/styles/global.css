@@ -839,13 +839,10 @@ body[data-theme='light'] .accent-card {
 
 }
 
-/* ---------- PREMIUM INTRO ---------- */
-
+/* Intro auf Smartphones perfekt zentrieren */
 #intro{
     position:fixed;
     inset:0;
-
-    background:radial-gradient(circle,#08111f,#03070d);
 
     display:flex;
     justify-content:center;
@@ -853,73 +850,55 @@ body[data-theme='light'] .accent-card {
 
     overflow:hidden;
 
-    z-index:99999;
-
-    opacity:1;
-    transition:opacity 2.2s cubic-bezier(.22,1,.36,1);
+    z-index:9999;
 }
 
 .intro-content{
-    position:relative;
-    z-index:5;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
     text-align:center;
 
-    animation:textIn 1.2s ease;
+    z-index:2;
 }
 
-.intro-content h1{
-    margin:0;
+@media (max-width:768px){
 
-    font-size:clamp(3rem,8vw,6rem);
+    #intro{
+        padding:24px;
+    }
 
-    color:#6af0c8;
+    .intro-content{
+        width:100%;
+        max-width:320px;
+    }
 
-    letter-spacing:.18em;
+    .intro-content h1{
+        font-size:2.4rem;
+        line-height:1.1;
+    }
 
-    text-transform:uppercase;
+    .intro-content p{
+        font-size:1rem;
+        margin-top:10px;
+    }
 
-    text-shadow:
-        0 0 20px #20c9ff,
-        0 0 45px #20c9ff,
-        0 0 80px #20c9ff;
-}
+    .intro-content span{
+        font-size:.9rem;
+        margin-top:6px;
+    }
 
-.intro-content p{
-    margin:15px 0 10px;
+    .pulse-ring{
+        width:220px;
+        height:220px;
+    }
 
-    font-size:1.5rem;
-
-    color:white;
-}
-
-.intro-content span{
-    color:#b7c5dd;
-
-    font-size:1rem;
-
-    letter-spacing:.12em;
-}
-
-.pulse-ring{
-    position:absolute;
-
-    width:170px;
-    height:170px;
-
-    border-radius:50%;
-
-    border:4px solid #20c9ff;
-
-    box-shadow:
-        0 0 25px #20c9ff,
-        0 0 80px #20c9ff;
-
-    animation:pulse 2s infinite;
-}
-
-.ring2{
-    animation-delay:.8s;
+    .ring2{
+        width:280px;
+        height:280px;
+    }
 }
 
 #intro::before{
