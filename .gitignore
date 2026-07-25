@@ -3,3 +3,10 @@ node-v24.18.0-darwin-x64/
 dist/
 .astro/
 .npm-cache/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
